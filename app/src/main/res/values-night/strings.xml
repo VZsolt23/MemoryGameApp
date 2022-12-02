@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcomeText">Welcome!</string>
+    <string name="sound_memory_game">Sound Memory Game</string>
+    <string name="memory_game">Memory Game</string>
+    <string name="choose_game">Choose game type</string>
+    <string name="game_logo">Game Logo</string>
+    <string name="back_to_menu">Game mode</string>
+    <string name="moves">Moves:</string>
+</resources>

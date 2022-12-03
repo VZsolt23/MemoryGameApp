@@ -6,5 +6,17 @@
     <string name="choose_game">Choose game type</string>
     <string name="game_logo">Game Logo</string>
     <string name="back_to_menu">Game mode</string>
-    <string name="moves">Moves:</string>
+    <string name="moves">Moves: </string>
+    <string name="easy_4_x_2">Easy 4 x 2</string>
+    <string name="medium_4_x_4">Medium 4 x 4</string>
+    <string name="hard_6_x_4">Hard 6 x 4</string>
+    <string name="expert_6_x_5">Expert 6 x 5</string>
+    <string name="reset">Reset</string>
+    <string name="cncl">Cancel</string>
+    <string name="okay">OK</string>
+    <string name="message1">Select size of the board!</string>
+    <string name="already_won">You already won!</string>
+    <string name="invalid">Invalid move!</string>
+    <string name="won">Congratulation! You won!</string>
+    <string name="message2">Are you sure you want to reset current game?</string>
 </resources>

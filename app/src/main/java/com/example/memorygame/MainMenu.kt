@@ -15,9 +15,7 @@ import com.example.memorygame.service.ActivityHandler
 
 class MainMenu : AppCompatActivity() {
 
-    val loadMainMenu: ActivityHandler = ActivityHandler()
-
-    private lateinit var boardSize: BoardSize
+    private val loadMainMenu: ActivityHandler = ActivityHandler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,17 +42,17 @@ class MainMenu : AppCompatActivity() {
     private fun showSizeSelection() {
         val boardSizeView = LayoutInflater.from(this).inflate(R.layout.dialog_board_size, null)
         val radioGroup = boardSizeView.findViewById<RadioGroup>(R.id.radioGroup)
-        showAlert("Select size of the board!", boardSizeView, View.OnClickListener {
-            boardSize = when (radioGroup.checkedRadioButtonId) {
+        showAlert(getString(R.string.message1), boardSizeView, View.OnClickListener {
+            val boardSize: BoardSize = when (radioGroup.checkedRadioButtonId) {
                 R.id.rbEasy -> BoardSize.EASY
                 R.id.rbMedium -> BoardSize.MEDIUM
                 R.id.rbHard -> BoardSize.HARD
                 else -> BoardSize.EXPERT
             }
+
             val sendBoardSize = Intent(this, DefaultMemoryGame::class.java)
             sendBoardSize.putExtra("SizeOfBoard", boardSize)
             startActivity(sendBoardSize)
-            loadMainMenu.switchActivity(this, this, DefaultMemoryGame::class.java, 500)
         })
     }
 
@@ -62,8 +60,8 @@ class MainMenu : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle(title)
             .setView(view)
-            .setNegativeButton("Cancel", null)
-            .setPositiveButton("OK") { _, _ ->
+            .setNegativeButton(getString(R.string.cncl), null)
+            .setPositiveButton(getString(R.string.okay)) { _, _ ->
                 positiveClickListener.onClick(null)
             }.show()
     }

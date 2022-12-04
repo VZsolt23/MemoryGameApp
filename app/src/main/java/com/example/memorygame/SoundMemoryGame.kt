@@ -1,13 +1,13 @@
 package com.example.memorygame
 
-import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
-import android.transition.Transition
-import android.transition.TransitionManager
 import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.memorygame.service.ActivityHandler
+import com.example.memorygame.service.LightAndSound
+import com.google.android.material.snackbar.Snackbar
 
 
 class SoundMemoryGame : AppCompatActivity() {
@@ -19,31 +19,25 @@ class SoundMemoryGame : AppCompatActivity() {
         )
         setContentView(R.layout.activity_sound_memory_game)
 
-        val greenBtn: Button = findViewById(R.id.btn_green)
-        val blueBtn: Button = findViewById(R.id.btn_blue)
-        val redBtn: Button = findViewById(R.id.btn_red)
-        val yellowBtn: Button = findViewById(R.id.btn_yellow)
+        val clRoot: ConstraintLayout = findViewById(R.id.constLay)
+        val startBtn: Button = findViewById(R.id.startButton)
         val backBtn: Button = findViewById(R.id.backBtn)
 
-        val loadMainMenu: ActivityHandler = ActivityHandler()
+        val loadMainMenu = ActivityHandler()
+        val lightAndSound = LightAndSound()
 
-        greenBtn.setOnClickListener {
-            greenBtn.setBackgroundColor(resources.getColor(R.color.grass_green))
-        }
+        var isRunning = false
 
-        blueBtn.setOnClickListener {
-            blueBtn.setBackgroundColor(resources.getColor(R.color.teal_200))
-        }
-
-        redBtn.setOnClickListener {
-            redBtn.setBackgroundColor(resources.getColor(R.color.red))
-            val transition: TransitionManager
-
-        }
-
-        yellowBtn.setOnClickListener {
-            yellowBtn.setBackgroundColor(resources.getColor(R.color.bright_yellow))
-
+        startBtn.setOnClickListener {
+            if (!isRunning) {
+                lightAndSound.startGame(this)
+                isRunning = true
+                Snackbar.make(clRoot, getString(R.string.game_started), Snackbar.LENGTH_SHORT)
+                    .show()
+            } else {
+                Snackbar.make(clRoot, getString(R.string.already_running), Snackbar.LENGTH_SHORT)
+                    .show()
+            }
         }
 
         backBtn.setOnClickListener {

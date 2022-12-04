@@ -16,11 +16,11 @@
     <color name="grey">#9E9E9E</color>
 
     <color name="blood_red">#880808</color>
-    <color name="red">#FF0000</color>
-    <color name="blue">#0000FF</color>
-    <color name="bright_blue">#0096FF</color>
-    <color name="amber">#FFBF00</color>
-    <color name="bright_yellow">#FFEA00</color>
-    <color name="forest_green">#228B22</color>
-    <color name="grass_green">#7CFC00</color>
+    <color name="bright_red">#FF0000</color>
+    <color name="dark_blue">#0000FF</color>
+    <color name="bright_blue">#25A5FF</color>
+    <color name="dark_yellow">#EAAF00</color>
+    <color name="bright_yellow">#FFEB08</color>
+    <color name="dark_green">#1F881F</color>
+    <color name="bright_green">#7CFC00</color>
 </resources>

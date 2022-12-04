@@ -19,4 +19,8 @@
     <string name="invalid">Invalid move!</string>
     <string name="won">Congratulation! You won!</string>
     <string name="message2">Are you sure you want to reset current game?</string>
+    <string name="start">Start</string>
+    <string name="already_running">Game is already running</string>
+    <string name="game_started">Game started</string>
+    <string name="score">Score:</string>
 </resources>
